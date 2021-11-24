@@ -15,14 +15,17 @@ COPY scripts scripts
 COPY emails emails
 
 ENV NODE_ENV production
+ENV NODE_OPTIONS "--max-old-space-size=8192"
 RUN yarn build
 
 FROM golang:1.17.0-alpine3.14 as go-builder
 
-RUN apk add --no-cache gcc g++
+RUN apk add --no-cache gcc g++ make
 
 WORKDIR $GOPATH/src/github.com/grafana/grafana
-
+COPY Makefile ./
+COPY scripts scripts
+COPY .bingo .bingo
 COPY go.mod go.sum embed.go ./
 COPY cue cue
 COPY cue.mod cue.mod
@@ -31,6 +34,7 @@ COPY public/app/plugins public/app/plugins
 COPY pkg pkg
 COPY build.go package.json ./
 
+RUN make gen-go
 RUN go mod verify
 RUN go run build.go build
 
