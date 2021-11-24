@@ -37,7 +37,7 @@ Fine-grained access control is available for the following capabilities:
 - [Manage reports]({{< relref "../reporting.md" >}})
 - [View server information]({{< relref "../../administration/view-server/_index.md" >}})
 
-To learn about specific endpoints where you can use fine-grained access control, refer to [Permissions]({{< relref "./permissions.md" >}}) and to the relevant [API]({{< relref "../../http_api/_index.md" >}}) documentation:
+To learn about specific endpoints where you can use fine-grained access control, refer to [Permissions]({{< relref "./permissions.md" >}}) and to the relevant [API]({{< relref "../../http_api/_index.md" >}}) documentation.
 
 ## Enable fine-grained access control
 
