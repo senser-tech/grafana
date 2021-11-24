@@ -27,7 +27,7 @@ To grant or revoke access to your users, create or remove built-in role assignme
 
 Fine-grained access control is available for the following capabilities:
 
-- [Use Explore mode]({{< relref "../../explore/_index.md" >}}) 
+- [Use Explore mode]({{< relref "../../explore/_index.md" >}})
 - [Manage users]({{< relref "../../manage-users/_index.md" >}})
 - [Manage LDAP authentication]({{< relref "../../auth/ldap/_index.md" >}})
 - [Manage data sources]({{< relref "../../datasources/_index.md" >}})
