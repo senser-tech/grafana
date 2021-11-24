@@ -33,7 +33,7 @@ export const Edge = memo(function Edge(props: Props) {
     >
       <line
         strokeWidth={hovering ? 2 : 1}
-        stroke={'#999'}
+        stroke={edge.color ? edge.color : '#999'}
         x1={line.x1}
         y1={line.y1}
         x2={line.x2}
