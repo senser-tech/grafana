@@ -57,7 +57,8 @@ export function getEdgeFields(edges: DataFrame) {
     mainStat: fieldsCache.getFieldByName(NodeGraphDataFrameFieldNames.mainStat),
     secondaryStat: fieldsCache.getFieldByName(NodeGraphDataFrameFieldNames.secondaryStat),
     details: findFieldsByPrefix(edges, NodeGraphDataFrameFieldNames.detail),
-    color: fieldsCache.getFieldByName(NodeGraphDataFrameFieldNames.color)
+    color: fieldsCache.getFieldByName(NodeGraphDataFrameFieldNames.color),
+    width: fieldsCache.getFieldByName(NodeGraphDataFrameFieldNames.width),
   };
 }
 
@@ -117,6 +118,7 @@ export function processNodes(
       const target = edgeFields.target?.values.get(index);
       const source = edgeFields.source?.values.get(index);
       const color = edgeFields.color?.values.get(index);
+      const width = edgeFields.width?.values.get(index);
       // We are adding incoming edges count so we can later on find out which nodes are the roots
       nodesMap[target].incoming++;
 
@@ -127,7 +129,8 @@ export function processNodes(
         target,
         mainStat: edgeFields.mainStat ? statToString(edgeFields.mainStat, index) : '',
         secondaryStat: edgeFields.secondaryStat ? statToString(edgeFields.secondaryStat, index) : '',
-        color: color
+        color: color,
+        width: width
       } as EdgeDatum;
     });
   }

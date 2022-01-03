@@ -28,6 +28,7 @@ export type EdgeDatum = LinkDatum & {
   secondaryStat: string;
   dataFrameRowIndex: number;
   color?: string;
+  width: number;
 };
 
 // After layout is run D3 will change the string IDs for actual references to the nodes.

@@ -32,7 +32,7 @@ export const Edge = memo(function Edge(props: Props) {
       aria-label={`Edge from: ${(edge.source as NodeDatum).id} to: ${(edge.target as NodeDatum).id}`}
     >
       <line
-        strokeWidth={hovering ? 2 : 1}
+        strokeWidth={hovering ? (edge.width ? edge.width + 1 : 2) : (edge.width ? edge.width : 1)}
         stroke={edge.color ? edge.color : '#999'}
         x1={line.x1}
         y1={line.y1}
